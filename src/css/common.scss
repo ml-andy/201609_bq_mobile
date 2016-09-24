@@ -1,0 +1,7 @@
+@import "base.scss";
+
+$vpw:0;
+
+.wrapper{
+	@include r;
+}
