@@ -1,6 +1,73 @@
 @import "base.scss";
-
 $vpw:0;
+
+.head_top{
+	@include fltvw(640,83);
+	background-color: #fff2e7;
+	z-index: 9;
+	.logo{
+		@include altvw(152,83);
+		background-image: url(../images/logo.png);
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: center center;
+	}
+	$color-main: #b5646f;
+	$color-active: #c19f75;
+	&.on{
+		.menubtn{
+			.txt{
+				background-image: url(../images/menu_active.png);
+				background-size: contain;
+				background-repeat: no-repeat;
+				background-position: center center;
+			}	
+			
+			.top {
+				@include transform(translateY(getVW(11)) translateX(0) rotate(45deg));
+				background: $color-active;
+			}
+			.middle {
+				opacity: 0;
+				background: $color-active;
+			}    
+			.bottom {
+				@include transform(translateY(-2.7vw) translateX(0) rotate(-45deg));
+				background: $color-active;
+			}
+		}
+	}
+	.menubtn{
+		@include artvw(173,83);
+		cursor: pointer;
+		.txt{
+			@include altvw(107,83);
+			background-image: url(../images/menu.png);
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: center center;
+			transition: 0.3s;
+		}
+		span {
+			@include border-radius(0.39vw);
+			background: $color-main;
+			border: none;
+			height: getVW(5);
+			width: getVW(46);
+			position: absolute;
+			top: getVW(25);
+			left: getVW(107);
+			transition:  all .35s ease;
+			cursor: pointer;    
+		  	&:nth-of-type(2) {
+		    	top: getVW(39);
+		  	}    
+		  	&:nth-of-type(3) {
+		    	top: getVW(53);
+		  	}
+		}
+	}
+}
 
 .wrapper{
 	@include r;
