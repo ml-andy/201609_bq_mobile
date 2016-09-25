@@ -1,8 +1,21 @@
 @import "base.scss";
 $vpw:0;
-
+.loading{
+	@include flt;
+	z-index: 99;
+	background-image: url(../images/menubg.png);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center top;
+	span{
+		@include am(auto,auto);
+		@include fontvw(38,38,#b5646f);
+		text-align: center;
+	}
+}
 .head_top{
 	@include fltvw(640,83);
+	transition: 0.3s;
 	background-color: #fff2e7;
 	z-index: 9;
 	.logo{
@@ -15,6 +28,7 @@ $vpw:0;
 	$color-main: #b5646f;
 	$color-active: #c19f75;
 	&.on{
+		background-color: #ffffff;
 		.menubtn{
 			.txt{
 				background-image: url(../images/menu_active.png);
@@ -68,7 +82,245 @@ $vpw:0;
 		}
 	}
 }
-
+.menu{
+	@include alt;
+	overflow-y: scroll;
+	-webkit-overflow-scrolling: touch;
+	z-index: 8;
+	height: 0;
+	&.on{
+		height: 100%;
+		.menua_box{
+			.menua{
+				opacity: 1;
+			}
+		}
+		.menu_social{
+			opacity: 1;
+		}
+		.footer{
+			opacity: 1;
+		}
+		.menu_bg{
+			@include transform(translateX(0));
+			opacity: 1;
+		}
+	}
+	&.off{
+		$delayTime:0s;
+		height: 100%;
+		.menua_box{
+			.menua{
+				@include rvw(640,110);
+				transition: 0.3s;
+				opacity: 0;
+				width: 100%;
+				text-indent: -9999px;
+				background-size: auto 100%;
+				background-repeat: no-repeat;
+				background-position: center center;
+				&.m1{
+					transition-delay: $delayTime;
+					background-image: url(../images/menu1.png);
+				}
+				&.m2{
+					transition-delay: $delayTime;
+					background-image: url(../images/menu2.png);
+				}
+				&.m3{
+					transition-delay: $delayTime;
+					background-image: url(../images/menu3.png);
+				}
+				&.m4{
+					transition-delay: $delayTime;
+					background-image: url(../images/menu4.png);
+				}
+				&.m5{
+					transition-delay: $delayTime;
+					background-image: url(../images/menu5.png);
+				}
+			}
+		}
+		.menu_social{
+			transition-delay: $delayTime;
+			opacity: 0;
+		}
+		.footer{
+			transition-delay: $delayTime;
+			opacity: 0;
+		}
+		.menu_bg{
+			transition-delay: 0.3s;
+			@include transform(translateX(100%));
+			opacity: 0;
+		}
+	}
+	$delayTime:0.8s;
+	.menua_box{
+		@include r;
+		margin-top: getVW(194);
+		z-index: 1;
+		.menua{
+			@include rvw(640,110);
+			transition: 0.3s;
+			opacity: 0;
+			width: 100%;
+			text-indent: -9999px;
+			background-size: auto 100%;
+			background-repeat: no-repeat;
+			background-position: center center;
+			&.m1{
+				transition-delay: $delayTime;
+				background-image: url(../images/menu1.png);
+			}
+			&.m2{
+				transition-delay: $delayTime;
+				background-image: url(../images/menu2.png);
+			}
+			&.m3{
+				transition-delay: $delayTime;
+				background-image: url(../images/menu3.png);
+			}
+			&.m4{
+				transition-delay: $delayTime;
+				background-image: url(../images/menu4.png);
+			}
+			&.m5{
+				transition-delay: $delayTime;
+				background-image: url(../images/menu5.png);
+			}
+		}
+	}
+	.menu_social{
+		@include r;
+		margin: getVW(38) 0 getVW(150) 0;
+		text-align: center;
+		padding-top: getVW(60);
+		transition: 0.3s;
+		transition-delay: $delayTime;
+		opacity: 0;
+		z-index: 1;
+		&:before{
+			content:"";
+			@include altvw(400,2,0,0,-200);
+			background-color: #e8dacf;
+			left: 50%;
+		}
+		.home_btn{
+			width: getVW(58);
+			height: getVW(57);
+			margin-right: getVW(48);
+			background-image: url(../images/menu_home.png);
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: center center;
+			display: inline-block;
+			vertical-align: top;
+			text-indent: -9999px;
+		}
+		.fb_btn{
+			width: getVW(58);
+			height: getVW(57);
+			background-image: url(../images/menu_fb.png);
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: center center;
+			display: inline-block;
+			vertical-align: top;
+			text-indent: -9999px;
+		}
+	}
+	.footer{
+		@include r;
+		@include fontvw(22,24,#b7a79a);
+		height: getVW(40);
+		margin-bottom: getVW(55);
+		text-align: center;
+		text-indent: -9999px;
+		background-image: url(../images/footer_txt.png);
+		background-size: auto 100%;
+		background-repeat: no-repeat;
+		background-position: center center;
+		transition: 0.3s;
+		transition-delay: $delayTime;
+		opacity: 0;
+		z-index: 1;
+	}
+	.menu_bg{
+		@include flt;
+		@include transform(translateX(100%));
+		background-image: url(../images/menubg.png);
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center top;
+		background-color: #fff0e6;
+		opacity: 0;
+		transition: 0.5s;
+		z-index: 0;
+	}
+}
 .wrapper{
 	@include r;
+	padding-top: getVW(83);
+	z-index: 1;
+	.index{
+		@include r;
+		&.on{
+			.kv1{
+				filter: blur(0px);
+				background-size: 100%;
+			}
+			.kv2{
+				opacity: 1;
+				filter: blur(0px);
+			}
+			.btn{
+				opacity: 1;
+				top: getVW(834);
+			}
+		}
+		.kv1{
+			@include r;
+			height: getVW(414);
+			background-image: url(../images/index_kv1.png);
+			background-size: 110%;
+			filter: blur(5px);
+			transition: 3.5s;
+			background-repeat: no-repeat;
+			background-position: center center;
+		}
+		.kv2{
+			@include r;
+			height: getVW(386);
+			background-image: url(../images/index_kv2.png);
+			background-size: 100%;
+			background-repeat: no-repeat;
+			background-position: center center;
+			margin-bottom: getVW(368);
+			opacity: 0;
+			filter: blur(5px);
+			transition: 2s;
+			transition-delay: 1s;
+		}
+		.btn{
+			@include altvw(378,80,50,914,-189);
+			left: 50%;
+			background-image: url(../images/index_btn.png);
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: center center;
+			cursor: pointer;
+			opacity: 0;
+			transition: 1s;
+			transition-delay: 2s;
+		}
+	}
+}
+.bg{
+	@include flt;
+	background-image: url(../images/bg.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center top;
+	z-index: 0;
 }
