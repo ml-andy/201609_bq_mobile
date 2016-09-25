@@ -18,6 +18,12 @@ $vpw:0;
 	transition: 0.3s;
 	background-color: #fff2e7;
 	z-index: 9;
+	&.nobg{
+		background-color: initial;
+		&.on{
+			background-color: initial;
+		}
+	}
 	.logo{
 		@include altvw(152,83);
 		background-image: url(../images/logo.png);
@@ -313,6 +319,69 @@ $vpw:0;
 			opacity: 0;
 			transition: 1s;
 			transition-delay: 2s;
+		}
+	}
+	.stage_input{
+		@include r;
+		.title{
+			@include r;
+			height: getVW(81);
+			margin-top: getVW(65);
+			margin-bottom: getVW(42);
+			background-image: url(../images/input_title.png);
+			background-size: auto 100%;
+			background-repeat: no-repeat;
+			background-position: center center;
+		}
+		.frame{
+			@include r;
+			min-height: getVW(859);
+			// height: calc(100% - 42.34375vw);
+			// top: getVW(271);
+			.content{
+				@include r;
+				width: getVW(470);
+				margin-left: calc(50% - 36.71875vw);
+				margin-right: calc(50% - 36.71875vw);
+				padding-top: getVW(96);
+				margin-bottom: getVW(200);
+				z-index: 1;
+				.pic{
+					@include r;
+					img{
+						width: 100%;
+					}
+				}
+			}
+			.frame_bg{
+				@include alt;
+				z-index: 0;
+				.frame_bg_top{
+					@include alt;
+					height: getVW(206);
+					background-image: url(../images/input_frame_bg_top.png);
+					background-size: 100% auto;
+					background-repeat: no-repeat;
+					background-position: center bottom;
+				}
+				.frame_bg_middle{
+					@include alt;
+					height: calc(100% - 134.21875vw);
+					top: getVW(206);
+					background-image: url(../images/input_frame_bg_middle.png);
+					background-size: 100% auto;
+					background-repeat: repeat-y;
+					background-position: center top;
+				}
+				.frame_bg_bottom{
+					@include alb;
+					height: getVW(653);
+					background-image: url(../images/input_frame_bg_bottom.png);
+					background-size: 100% auto;
+					background-repeat: no-repeat;
+					background-position: center top;
+				}
+			}
 		}
 	}
 }
