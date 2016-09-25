@@ -296,14 +296,14 @@ $vpw:0;
 			background-size: 100%;
 			background-repeat: no-repeat;
 			background-position: center center;
-			margin-bottom: getVW(368);
+			margin-bottom: getVW(147);
 			opacity: 0;
 			filter: blur(5px);
-			transition: 2s;
+			transition: 1.5s;
 			transition-delay: 1s;
 		}
 		.btn{
-			@include altvw(378,80,50,914,-189);
+			@include altvw(378,80,50,874,-189);
 			left: 50%;
 			background-image: url(../images/index_btn.png);
 			background-size: contain;
