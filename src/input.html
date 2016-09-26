@@ -17,6 +17,7 @@
 <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
 <!---->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
 <!--css-->
 <link rel="stylesheet" href="css/common.css"/>
 <!--js-->
@@ -126,7 +127,7 @@
                        (02)26420378<br>
                        新北市汐止區中正路123號
                    </div>
-                   <div class="map"></div>
+                   <div class="map" id="mapCanvas"></div>
                </div>
                <div class="mom_data_box data_box">
                    <div class="t"></div>
@@ -173,7 +174,7 @@
                        (02)26420378<br>
                        新北市汐止區中正路123號
                    </div>
-                   <div class="map"></div>
+                   <div class="map" id="mapCanvas2"></div>
                </div>
                <div class="code_box">
                    <span>驗證碼</span>
@@ -184,16 +185,16 @@
                <div class="agree_box">
                    <div class="checkbox"></div>
                    <div class="txt">
-                       我已詳閱並同意<a href="http://www.shiseido.com.tw/terms.aspx">個資法條款</a>
+                       我已詳閱並同意<a href="http://www.shiseido.com.tw/terms.aspx" target="blank">個資法條款</a>
                    </div>
                </div>
                <div class="sendbtn">
                    <a href="javascript:;">確認送出</a>
                </div>
                <div class="des">
-                   ※  試用品數量有限，送完為止，每支手機號碼限兌乙次<br>
-                   ※  資生堂保有贈品更換之權利<br>
-                   ※  限手機有網路功能者參與兌換
+                   <div class="in"><span>※</span>試用品數量有限，送完為止，每支手機號碼限兌乙次</div>
+                   <div class="in"><span>※</span>資生堂保有贈品更換之權利</div>
+                   <div class="in"><span>※</span>限手機有網路功能者參與兌換</div>
                </div>
            </div>
            <div class="frame_bg">

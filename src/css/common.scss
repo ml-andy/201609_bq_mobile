@@ -352,6 +352,222 @@ $vpw:0;
 						width: 100%;
 					}
 				}
+				.step1{
+					@include r;
+					.message_box{
+						@include r;
+						.message{
+							@include r;
+							@include fontvw(21,28,#fff);
+							width: getVW(350);
+							height: getVW(130);
+							margin-left: getVW(60);
+							text-align: center;
+							z-index: 1;
+							background-color: initial;
+							border: 0;
+							&.on{
+								background-color: #e0c690;
+							}
+							&:focus{
+								outline: none !important;
+								background-color: #e0c690;
+							}
+						}
+						.message_box_bg{
+							@include alt;
+							@include border-radius(getVW(65));
+							@include fontvw(24,130,#fff);
+							text-align: center;
+							background-color: #e0c690;
+						}
+					}
+				}
+				.step2{
+					@include r;
+					.w{
+						@include r;
+						@include fontvw(24,36,#8e796e);
+						text-align: center;
+						margin-bottom: getVW(32);
+						.respend{
+							position: relative;
+							width: auto;
+							height: getVW(36);
+							margin-left: getVW(15);
+							@include fontvw(24,36,#b78e58);
+							&:after{
+								content:"";
+								@include alt;
+								@include border-radius(getVW(18));
+								padding: 0 getVW(10);
+								margin-left: getVW(-10);
+								margin-top: -2px;
+								border: 2px solid #b78e58;
+							}
+						}
+					}
+				}
+				.data_box{
+					@include r;
+					width: getVW(422);
+					margin-left: getVW(24);
+					margin-right: getVW(24);
+					margin-bottom: getVW(50);
+					&.your_data_box{
+						.t{
+							background-image: url(../images/input_s_title1.png);
+						}
+					}
+					&.mom_data_box{
+						.t{
+							background-image: url(../images/input_s_title2.png);
+						}
+					}
+					.t{
+						@include r;
+						height: getVW(52);
+						margin-bottom: getVW(27);
+						background-size: auto 100%;
+						background-repeat: no-repeat;
+						background-position: center center;
+					}
+					ul{
+						@include r;
+						margin-bottom: getVW(10);
+						li{
+							@include r;
+							margin-bottom: getVW(13);
+							.lt{
+								@include altvw(130,44);
+								@include fontvw(26,44,#8e796e,bolder);
+								text-align: left;
+								z-index: 1;
+							}
+							.rt{
+								@include r;
+								z-index: 0;
+								box-sizing: border-box;
+								padding-left: getVW(130);
+								input,select{
+									@include r;
+									@include fontvw(21,42,#8e796e);
+									@include border-radius(getVW(10));
+									height: getVW(44);
+									box-sizing: border-box;
+									border: getVW(2) solid #cfc3ba;
+									background-color: #fff;
+									padding: 0 getVW(10);
+								}
+							}
+						}
+					}
+					.address{
+						@include r;
+						@include fontvw(26,34,#8e796e);
+						margin-bottom: getVW(215);
+					}
+					.map{
+						@include albvw(344,190,50,0,-172);
+						@include border-radius(getVW(10));
+						left: 50%;
+						background-color: #e6e6e6;
+						box-sizing: border-box;
+						border: 1px solid #d5cbc3;
+					}
+				}
+				.code_box{
+					@include r;
+					margin-bottom: getVW(22);
+					box-sizing: border-box;
+					padding-left: getVW(13);
+					span{
+						@include r(auto);
+						@include fontvw(24,50,#8e796e);
+						margin-right: getVW(10);
+					}
+					.code{
+						@include r;
+						@include fontvw(24,46,#8e796e);
+						@include border-radius(getVW(10));
+						width: getVW(125);
+						height: getVW(50);
+						box-sizing: border-box;
+						border: 2px solid #cfc3ba;
+						margin-right: getVW(10);
+						text-align: center;
+					}
+					.codeimg{
+						@include rvw(140,40);
+						margin-top: getVW(5);
+						margin-right: getVW(10);
+					}
+					.changeimg{
+						@include r(auto);
+						@include fontvw(24,50,#8e796e);
+						text-decoration: underline;
+						cursor: pointer;
+					}
+				}
+				.agree_box{
+					@include r;
+					box-sizing: border-box;
+					padding-left: getVW(40);
+					margin-bottom: getVW(22);
+					.checkbox{
+						@include rvw(48,48);
+						@include border-radius(getVW(24));
+						margin-right: getVW(10);
+						background-color: #fff;
+						box-sizing: border-box;
+						border: 2px solid #cfc3ba;
+						cursor: pointer;
+						&.on{
+							background-image: url(../images/input_checkbox.png);
+							background-size: contain;
+							background-repeat: no-repeat;
+							background-position: center center;
+						}
+					}
+					.txt{
+						@include r(auto);
+						@include fontvw(26,48,#8e796e);
+						a{
+							color: #8e796e;
+							text-decoration: underline;
+						}
+					}
+				}
+				.sendbtn{
+					@include r;
+					margin-bottom: getVW(40);
+					text-align: center;
+					a{
+						width: getVW(224);
+						height: getVW(68);
+						display: inline-block;
+						background-image: url(../images/input_sendbtn.png);
+						background-size: contain;
+						background-repeat: no-repeat;
+						background-position: center center;
+						text-indent: -9999px;
+					}
+				}
+				.des{
+					@include r;
+					box-sizing: border-box;
+					padding-left: getVW(14);
+					.in{
+						@include r;
+						@include fontvw(24,30,#8e796e);
+						box-sizing: border-box;
+						padding-left: getVW(36);
+						span{
+							@include altvw(36,30);
+							z-index: 1;
+						}
+					}
+				}
 			}
 			.frame_bg{
 				@include alt;
