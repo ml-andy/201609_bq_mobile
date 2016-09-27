@@ -6,7 +6,6 @@
 		menuTimeout:''
 	};
 
-
 	//Common
 	$('.menubtn').on('click',function(){
 		if($(this).parent().hasClass('on')){
@@ -25,11 +24,13 @@
 			clearTimeout(o.menuTimeout);
 			$('.head_top').addClass('on');
 			$('.menu').removeClass('on').removeClass('off').addClass('on');
+			o.wrp.addClass('on');
 		}else{
 			$('.head_top').removeClass('on');
 			$('.menu').removeClass('on').addClass('off');
 			o.menuTimeout = setTimeout(function(){
 				$('.menu').removeClass('off');
+				o.wrp.removeClass('on');
 			},800);
 		}
 	}
@@ -40,6 +41,15 @@
 		changeCode();
 		getData();
 
+		$('.respend').click(function(){
+			showResendpop(true);
+		});
+		$('.resend_pop .closebtn').click(function(){
+			showResendpop(false);
+		});
+		$('.success_pop .closebtn').click(function(){
+			showSuccesspop(false);
+		});
 		$('.checkbox').click(function(){
 			if($(this).hasClass('on')) $(this).removeClass('on');
 			else $(this).addClass('on');
@@ -50,6 +60,20 @@
 			else $(this).removeClass('on');
 		});
 
+		function showResendpop(_t){
+			if(_t){
+				$('.resend_pop').fadeIn();
+			}else{
+				$('.resend_pop').fadeOut();
+			}
+		}
+		function showSuccesspop(_t){
+			if(_t){
+				$('.success_pop').fadeIn();
+			}else{
+				$('.success_pop').fadeOut();
+			}
+		}
 		function changeCode(){
 			var randomForCode = Math.floor(Math.random()*10000) + 1;
 			$('.codeimg').attr('src','http://benefique-event.medialand.com.tw/xml/api_vcode.ashx?' + randomForCode);
@@ -125,6 +149,7 @@
 					_t.CITY + _t.AREA + _t.ADDRESS
 				);
 				_pp = new google.maps.LatLng(_t.LAT,_t.LNG);
+				beachMarker.setMap(null);
 				beachMarker = new google.maps.Marker({position: _pp,map: map});
 				map.setCenter(_pp);
 			}

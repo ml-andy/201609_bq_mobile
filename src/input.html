@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta lang="tw">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<!-- <meta name="viewport" content="width=1280,user-scalable=no"> -->
+<meta name="viewport" content="width=device-width,user-scalable=no"> 
 <meta name="description" content="說明"/>
 <meta name="keywords" content="關鍵字"/>
 <meta name="copyright" content="design : Medialand @ 2016"/>
@@ -205,6 +205,50 @@
        </div>
      </div>
   </div>
+
+  <!-- popup -->
+  <div class="resend_pop">
+    <div class="main">
+      <div class="closebtn"></div>
+      <div class="title"></div>
+      <ul class="resend_data_box">
+        <li>
+            <div class="lt">手機號碼</div>
+            <div class="rt">
+                <input type="text" class="phone">
+            </div>
+        </li>
+        <li>
+            <div class="lt">e-mail</div>
+            <div class="rt">
+                <input type="text" class="email">
+            </div>
+        </li>
+        <li>
+            <div class="lt">驗證碼</div>
+            <div class="rt">
+                <input type="text" class="code">
+                <img src="http://benefique-event.medialand.com.tw/xml/api_vcode.ashx" class="codeimg">
+                <div class="changeimg">換一張</div>
+            </div>
+        </li>
+      </ul>
+      <div class="sendbtn">
+          <a href="javascript:;">確認送出</a>
+      </div>
+    </div>
+  </div>
+  <div class="success_pop">
+    <div class="main">
+      <div class="closebtn"></div>
+      <div class="title"></div>
+      <div class="sendbtn">
+          <a href="javascript:;">確認送出</a>
+      </div>
+    </div>
+  </div>
+  <!-- popup end -->
+  
   <div class="bg"></div>
 </body>
 </html>
