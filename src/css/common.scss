@@ -17,9 +17,15 @@ $vpw:0;
 	background-repeat: no-repeat;
 	background-position: center top;
 	span{
-		@include am(auto,auto);
-		@include fontvw(38,38,#b5646f);
+		@include altvw(198,70,50,50,-99,-35);
+		left: 50%;
+		top: 50%;
+		text-indent: -9999px;
 		text-align: center;
+		background-image: url(../images/loading.png);
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-position: center center;
 	}
 }
 .head_top{
@@ -98,7 +104,7 @@ $vpw:0;
 	}
 }
 .menu{
-	@include alt;
+	@include flt;
 	overflow-y: scroll;
 	-webkit-overflow-scrolling: touch;
 	z-index: 8;
@@ -279,14 +285,16 @@ $vpw:0;
 	padding-top: getVW(83);
 	z-index: 1;
 	&.on{
-		position: fixed;
+		// position: fixed;
 	}
 	.index{
 		@include r;
 		&.on{
 			.kv1{
-				filter: blur(0px);
-				background-size: 100%;
+				&:before{
+					@include transform(scale(1,1));
+					filter: blur(0px);
+				}
 			}
 			.kv2{
 				opacity: 1;
@@ -300,12 +308,18 @@ $vpw:0;
 		.kv1{
 			@include r;
 			height: getVW(414);
-			background-image: url(../images/index_kv1.png);
-			background-size: 110%;
-			filter: blur(5px);
-			transition: 3.5s;
-			background-repeat: no-repeat;
-			background-position: center center;
+			overflow: hidden;
+			&:before{
+				content:"";
+				@include alt;
+				@include transform(scale(1.1,1.1));
+				background-image: url(../images/index_kv1.png);
+				background-size: 100%;
+				filter: blur(5px);
+				transition: 3.5s;
+				background-repeat: no-repeat;
+				background-position: center center;
+			}
 		}
 		.kv2{
 			@include r;
@@ -370,28 +384,32 @@ $vpw:0;
 						@include r;
 						.message{
 							@include r;
-							@include fontvw(21,28,#fff);
+							@include fontvw(21,28,rgb(142, 121, 110));
 							width: getVW(350);
-							height: getVW(130);
+							height: getVW(120);
 							margin-left: getVW(60);
+							margin-top: getVW(5);
+							margin-bottom: getVW(5);
 							text-align: center;
 							z-index: 1;
 							background-color: initial;
 							border: 0;
 							&.on{
-								background-color: #e0c690;
+								background-color: #fff;
 							}
 							&:focus{
 								outline: none !important;
-								background-color: #e0c690;
+								background-color:#fff;
 							}
 						}
 						.message_box_bg{
 							@include alt;
 							@include border-radius(getVW(65));
-							@include fontvw(24,130,#fff);
+							@include fontvw(24,130,rgb(142, 121, 110));
 							text-align: center;
-							background-color: #e0c690;
+							background-color: #fff;
+							box-sizing: border-box;
+							border: 1px solid rgb(142, 121, 110);
 						}
 					}
 				}
@@ -620,7 +638,7 @@ $vpw:0;
 		background-position: center getVW(380);
 		.title{
 			@include r;
-			height: getVW(239);
+			height: getVW(285);
 			margin-top: getVW(65);
 			margin-bottom: getVW(30);
 			background-image: url(../images/video_title.png);
