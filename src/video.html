@@ -17,6 +17,7 @@
 <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
 <!---->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
 <!--css-->
 <link rel="stylesheet" href="css/common.css"/>
 <!--js-->
@@ -56,13 +57,83 @@
     </div>
     <div class="menu_bg"></div>
   </div>
-  <div class="wrapper idx">
-     <div class="index">
-       <div class="kv1"></div>
-       <div class="kv2"></div>
-       <a href="trial.html" class="btn"></a>
+  <div class="wrapper video">
+     <div class="stage_video">
+       <div class="title"></div>
+       <div class="btn">
+           <a href="javascript:;" class="about_btn">活動辦法</a>
+           <!--<a href="javascript:;" class="award_btn">得獎名單</a>-->
+       </div>
+       <div class="video_box">
+           <iframe width="580" height="380" src="https://www.youtube.com/embed/8bko-b90m_M" frameborder="0" allowfullscreen></iframe>
+       </div>
+       <div class="sharebtn">
+           <a href="javascript:;">分享</a>
+       </div>
      </div>
   </div>
+
+  <!-- popup -->
+  <div class="video_data_pop">
+    <div class="main">
+      <div class="closebtn"></div>
+      <div class="title"></div>
+      <ul class="video_data_box">
+        <li>
+            <div class="lt">姓名</div>
+            <div class="rt">
+                <input type="text" class="name">
+            </div>
+        </li>
+        <li>
+            <div class="lt">手機</div>
+            <div class="rt">
+                <input type="text" class="phone">
+            </div>
+        </li>
+        <li>
+            <div class="lt">e-mail</div>
+            <div class="rt">
+                <input type="text" class="email">
+            </div>
+        </li>
+        <li>
+            <div class="lt">驗證碼</div>
+            <div class="rt">
+                <input type="text" class="code">
+                <img src="http://benefique-event.medialand.com.tw/xml/api_vcode.ashx" class="codeimg">
+                <div class="changeimg">換一張</div>
+            </div>
+        </li>
+      </ul>
+      <div class="agree_box">
+          <div class="checkbox"></div>
+          <div class="txt">
+              我已詳閱並同意<a href="http://www.shiseido.com.tw/terms.aspx" target="blank">個資法條款</a>
+          </div>
+      </div>
+      <div class="sendbtn">
+          <a href="javascript:;">確認送出</a>
+      </div>
+    </div>
+  </div>
+  <div class="video_success_pop">
+    <div class="main">
+      <div class="closebtn"></div>
+      <div class="title"></div>
+      <div class="sendbtn">
+          <a href="input.html">立即前往</a>
+      </div>
+    </div>
+  </div>
+  <div class="about_pop">
+    <div class="main">
+      <div class="closebtn"></div>
+      <div class="content"></div>
+    </div>
+  </div>
+  <!-- popup end -->
+  
   <div class="bg"></div>
 </body>
 </html>
