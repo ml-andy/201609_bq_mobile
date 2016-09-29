@@ -182,7 +182,7 @@
 				success: function(data) {
 					if(data.RS=="OK"){
 						o.exchangeData = data;
-						console.log(o.exchangeData);
+						// console.log(o.exchangeData);
 						afterGetdata();
 						o.loading.fadeOut();
 					}else{
@@ -448,7 +448,7 @@
 				email:_resend_data_box.find('.email').val(),
 				ccc:_resend_data_box.find('.code').val()
 			};
-			console.log(_data);
+			// console.log(_data);
 			if(_data.mob == "" || _data.mob == undefined){alert(o.phoneTxt);_o.removeClass('on');return;}
 			if(_data.email == "" || _data.email == undefined){alert(o.emailTxt);_o.removeClass('on');return;}
 			if(_data.ccc == "" || _data.ccc == undefined){alert(o.codeTxt);_o.removeClass('on');return;}
@@ -540,7 +540,7 @@
 				message:$('.message_box .message').val(),
 				ccc:$('.stage_input .code_box .code').val()
 			};
-			console.log(_data);
+			// console.log(_data);
 			if(_data.name == "" || _data.name == undefined){alert(o.nameTxt);_o.removeClass('on');return;}
 			if(_data.mob == "" || _data.mob == undefined){alert(o.phoneTxt);_o.removeClass('on');return;}
 			if(_data.name2 == "" || _data.name2 == undefined){alert(o.nameTxt);_o.removeClass('on');return;}
