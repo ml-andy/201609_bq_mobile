@@ -12,7 +12,9 @@
 		messageTxt:'請輸入留言',
 		FBAppId: '176845812757265',
 		mainurl: 'http://benefique-event.medialand.com.tw/m/',
-		videolink: 'https://www.youtube.com/watch?v=8bko-b90m_M',
+		videotitle:'碧麗妃│用溫度傳遞幸福',
+		videodes:'妳和媽媽之間，存在什麼溫暖小互動？即日起至2016/11/02，分享影片到Facebook(需將狀態設為公開)有機會獲得碧麗妃新品─《溫℃高滲透修護水精華》50mL 乙瓶邀妳發揮暖女精神、分享和媽媽的溫暖記憶，用掌心的溫度和媽媽一起變漂亮！了解更多：http://benefique-event.shiseido.com.tw/',
+		videolink: 'http://benefique-event.medialand.com.tw/share_video.html',
 		exchangeTitle:'已經將您的留言傳送給媽媽了！',
 		exchangeTxt:'送您一份禮物',
 		exchangeTitle_mom:'親愛的媽媽<br>這是女兒給您的溫暖留言：',
@@ -53,7 +55,8 @@
 	});
 	$('.menu_social .fb_btn').on('click',function(){
 		tracker_btn('/m/fbshare_btn.html');
-		window.open('https://www.facebook.com/taiwanshiseido/');
+		// window.open('https://www.facebook.com/taiwanshiseido/');
+		shareWeb();
 	});
 	$('.menubtn').on('click',function(){
 		if($(this).parent().hasClass('on')){
@@ -99,6 +102,17 @@
 	    	// Portrait
 	    	$('.turn_straight').fadeOut();
 	    }
+	}
+	function shareWeb(){
+		FB.ui({             
+			method: 'feed',
+			// name: o.videotitle,
+			// description: o.videodes,
+			display:"popup",
+			link: o.mainurl
+		}, function(response) {
+
+		});    
 	}
 
 
@@ -182,7 +196,7 @@
 				success: function(data) {
 					if(data.RS=="OK"){
 						o.exchangeData = data;
-						// console.log(o.exchangeData);
+						console.log(o.exchangeData);
 						afterGetdata();
 						o.loading.fadeOut();
 					}else{
@@ -365,8 +379,8 @@
 		function shareVideo(){
 			FB.ui({             
 				method: 'feed',
-				// name: o.sharetitle,
-				// description: o.sharedes,
+				name: o.videotitle,
+				description: o.videodes,
 				display:"popup",
 				link: o.videolink
 			}, function(response) {
