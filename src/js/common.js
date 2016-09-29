@@ -1,7 +1,4 @@
 ﻿$(document).ready(function(){
-	if(device.desktop()){
-		if(!o.wrp.hasClass('exchange')) window.location.href = window.location.href.replace('/m/','/');
-	}
 	var o ={
 		wrp: $('.wrapper'),
 		loading: $('.loading'),
@@ -21,6 +18,9 @@
 		exchangeTitle_mom:'親愛的媽媽<br>這是女兒給您的溫暖留言：',
 		exchangeTxt_mom:'還有一份禮物'
 	};
+	if(device.desktop()){
+		if(!o.wrp.hasClass('exchange')) window.location.href = window.location.href.replace('/m/','/');
+	}
 
 	//Common
 	$('.logo').on('click',function(){
@@ -196,8 +196,10 @@
 			}); 
 		}
 		function afterGetdata(){
+			$('.go_btn').addClass('on');
 			if(o.exchangeData.EXCHANGE!=0) $('.go_btn').addClass('on');
 			else{
+				$('.go_btn').removeClass('on');
 				$('.yes_btn').on('click',function(){
 					if(mom) tracker_btn('/m/momcoupon_use_yes.html');
 					else tracker_btn('/m/daughtercoupon_use_yes.html');
@@ -211,7 +213,8 @@
 			}
 			$('.store').html(o.exchangeData.STORE);
 
-			// mom = false;
+			if(o.exchangeData.TYPE !=0) mom = true;
+			else mom = false;
 
 			if(mom){
 				tracker_pg('/m/momcoupon.html');
@@ -457,9 +460,10 @@
 				data:_data,    
 				success: function(data) {
 					if(data.RS=="OK"){
-						alert('補發成功');
-						clearResendpop();
-						showResendpop(false);
+						alert('已重新發送，還有影片分享抽活動唷！');
+						window.location.href = "video.html";
+						// clearResendpop();
+						// showResendpop(false);
 					}else{
 						_o.removeClass('on');
 						alert(data.RS);

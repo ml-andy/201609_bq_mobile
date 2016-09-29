@@ -1,4 +1,6 @@
 @import "base.scss";
+html{-webkit-text-size-adjust: 100%;}
+
 $vpw:0;
 .turn_straight{
 	@include flt;
@@ -1026,6 +1028,7 @@ $vpw:0;
 						@include fontvw(32,44,#b75b64);
 						text-align: center;
 						margin-bottom: getVW(36);
+						max-height: 99999px;
 					}
 					.w{
 						@include r;
@@ -1036,6 +1039,7 @@ $vpw:0;
 						background-size: auto getVW(49);
 						background-position: left top;
 						margin-bottom: getVW(36);
+						max-height: 99999px;
 					}
 				}
 				.st{
@@ -1044,16 +1048,19 @@ $vpw:0;
 						@include r;
 						@include fontvw(32,44,#8e796e);
 						text-align: center;
+						max-height: 99999px;
 					}
 					span{
 						@include r;
 						@include fontvw(32,44,#b78e58);
 						text-align: center;
+						max-height: 99999px;
 					}
 					.w{
 						@include r;
 						@include fontvw(32,44,#8e796e);
 						text-align: center;
+						max-height: 99999px;
 					}
 				}
 				.tester{
@@ -1069,6 +1076,7 @@ $vpw:0;
 					@include fontvw(24,34,#b78e58);
 					text-align: center;
 					margin-bottom: getVW(20);
+					max-height: 99999px;
 				}
 				.word{
 					@include r;
@@ -1078,9 +1086,11 @@ $vpw:0;
 					border: 2px solid #d7d0cb;
 					padding: getVW(20);
 					margin-bottom: getVW(30);
+					max-height: 99999px;
 					span{
 						@include fontvw(26,34,#b75b64);
 						display: inline-block;
+						max-height: 99999px;
 					}
 				}
 				.btn{
@@ -1114,6 +1124,7 @@ $vpw:0;
 							.rt{
 								@include r;
 								@include fontvw(24,34,#8e796e);
+								max-height: 99999px;
 								box-sizing: border-box;
 								padding-left: getVW(34);
 								text-align: left;
