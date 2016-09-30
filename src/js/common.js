@@ -28,30 +28,58 @@
 	}
 
 	//Common
-	$('.logo').on('click',function(){
-		tracker_btn('/m/index_btn.html');
-		window.location.href='index.html';
-	})
-	$('.menua_box .m1').on('click',function(){
-		tracker_btn('/m/trial_btn.html');
-		window.location.href="trial.html";
-	});
-	$('.menua_box .m2').on('click',function(){
-		tracker_btn('/m/video_btn.html');
-		window.location.href="video.html";
-	});
-	$('.menua_box .m3').on('click',function(){
-		tracker_btn('/m/product_btn.html');
-		window.location.href="product.html";
-	});
-	$('.menua_box .m4').on('click',function(){
-		tracker_btn('/m/blogger_btn.html');
-		window.location.href="blogger.html";
-	});
-	$('.menua_box .m5').on('click',function(){
-		tracker_btn('/m/tips_btn.html');
-		window.location.href="tips.html";
-	});
+	if(o.wrp.hasClass('exchange')){
+		$('.logo').on('click',function(){
+			tracker_btn('/m/index_btn.html');
+			window.location.href='m/index.html';
+		})
+		$('.menua_box .m1').on('click',function(){
+			tracker_btn('/m/trial_btn.html');
+			window.location.href="m/trial.html";
+		});
+		$('.menua_box .m2').on('click',function(){
+			tracker_btn('/m/video_btn.html');
+			window.location.href="m/video.html";
+		});
+		$('.menua_box .m3').on('click',function(){
+			tracker_btn('/m/product_btn.html');
+			window.location.href="m/product.html";
+		});
+		$('.menua_box .m4').on('click',function(){
+			tracker_btn('/m/blogger_btn.html');
+			window.location.href="m/blogger.html";
+		});
+		$('.menua_box .m5').on('click',function(){
+			tracker_btn('/m/tips_btn.html');
+			window.location.href="m/tips.html";
+		});
+	}else{
+		$('.logo').on('click',function(){
+			tracker_btn('/m/index_btn.html');
+			window.location.href='index.html';
+		})
+		$('.menua_box .m1').on('click',function(){
+			tracker_btn('/m/trial_btn.html');
+			window.location.href="trial.html";
+		});
+		$('.menua_box .m2').on('click',function(){
+			tracker_btn('/m/video_btn.html');
+			window.location.href="video.html";
+		});
+		$('.menua_box .m3').on('click',function(){
+			tracker_btn('/m/product_btn.html');
+			window.location.href="product.html";
+		});
+		$('.menua_box .m4').on('click',function(){
+			tracker_btn('/m/blogger_btn.html');
+			window.location.href="blogger.html";
+		});
+		$('.menua_box .m5').on('click',function(){
+			tracker_btn('/m/tips_btn.html');
+			window.location.href="tips.html";
+		});
+	}
+	
 	$('.menu_social .home_btn').on('click',function(){
 		tracker_btn('/m/official_btn.html');
 		window.open('http://www.shiseido.com.tw/');

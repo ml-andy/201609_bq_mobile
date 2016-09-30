@@ -1617,8 +1617,7 @@ body{
 		}
 		.head_top{
 			@include fltvw(640,83);
-			left: 50%;
-			margin-left: -320px;
+			width: 100%;
 			transition: 0.3s;
 			background-color: #fff2e7;
 			z-index: 9;
@@ -2015,7 +2014,7 @@ body{
 						.frame_bg_top{
 							@include alt;
 							height: getVW(206);
-							background-image: url(../images/input_frame_bg_top.png);
+							background-image: url(../images/input_frame_bg_top_pc.png);
 							background-size: 100% auto;
 							background-repeat: no-repeat;
 							background-position: center bottom;
@@ -2024,7 +2023,7 @@ body{
 							@include alt;
 							height: calc(100% - 206px - 653px);
 							top: getVW(206);
-							background-image: url(../images/input_frame_bg_middle.png);
+							background-image: url(../images/input_frame_bg_middle_pc.png);
 							background-size: 100% auto;
 							background-repeat: repeat-y;
 							background-position: center top;
@@ -2032,7 +2031,7 @@ body{
 						.frame_bg_bottom{
 							@include alb;
 							height: getVW(653);
-							background-image: url(../images/input_frame_bg_bottom.png);
+							background-image: url(../images/input_frame_bg_bottom_pc.png);
 							background-size: 100% auto;
 							background-repeat: no-repeat;
 							background-position: center top;
@@ -2096,7 +2095,7 @@ body{
 			}
 		}
 		.bg{
-			@include flt(640px,100%,50%,0,-320px);
+			@include flt;
 			background-image: url(../images/bg.jpg);
 			background-size: cover;
 			background-repeat: no-repeat;
