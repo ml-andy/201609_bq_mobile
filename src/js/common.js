@@ -2,7 +2,7 @@
 	var o ={
 		wrp: $('.wrapper'),
 		loading: $('.loading'),
-		backEndUrl: 'http://benefique-event.medialand.com.tw/xml/',
+		backEndUrl: 'http://benefique-event.shiseido.com.tw/xml/',
 		menuTimeout:'',
 		agreeTxt:'請同意個人條款',
 		nameTxt:'請輸入真實姓名',
@@ -11,11 +11,11 @@
 		emailTxt:'請輸入E-mail',
 		messageTxt:'請輸入留言',
 		FBAppId: '176845812757265',
-		mainurl: 'http://benefique-event.medialand.com.tw/m/',
+		mainurl: 'http://benefique-event.shiseido.com.tw/m/',
 		mainVideoID: 'D7s0wudVjWs',
 		videotitle:'碧麗妃│用溫度傳遞幸福',
 		videodes:'妳和媽媽之間，存在什麼溫暖小互動？即日起至2016/11/02，分享影片到Facebook(需將狀態設為公開)有機會獲得碧麗妃新品─《溫℃高滲透修護水精華》50mL 乙瓶',
-		videolink: 'http://benefique-event.medialand.com.tw/share_video.html',
+		videolink: 'http://benefique-event.shiseido.com.tw/share_video.html',
 		exchangeTitle:'已經將您的留言傳送給媽媽了！',
 		exchangeTxt:'送您一份禮物',
 		exchangeTitle_mom:'親愛的媽媽<br>這是女兒給您的溫暖留言：',
@@ -545,7 +545,7 @@
 		}
 		function changeCode(){
 			var randomForCode = Math.floor(Math.random()*10000) + 1;
-			$('.codeimg').attr('src','http://benefique-event.medialand.com.tw/xml/api_vcode.ashx?' + randomForCode);
+			$('.codeimg').attr('src', o.backEndUrl + '/api_vcode.ashx?' + randomForCode);
 		}
 		function getData(){
 			$.ajax({
