@@ -13,7 +13,7 @@
 		FBAppId: '176845812757265',
 		mainurl: 'http://benefique-event.medialand.com.tw/m/',
 		videotitle:'碧麗妃│用溫度傳遞幸福',
-		videodes:'妳和媽媽之間，存在什麼溫暖小互動？即日起至2016/11/02，分享影片到Facebook(需將狀態設為公開)有機會獲得碧麗妃新品─《溫℃高滲透修護水精華》50mL 乙瓶邀妳發揮暖女精神、分享和媽媽的溫暖記憶，用掌心的溫度和媽媽一起變漂亮！了解更多：http://benefique-event.shiseido.com.tw/',
+		videodes:'妳和媽媽之間，存在什麼溫暖小互動？即日起至2016/11/02，分享影片到Facebook(需將狀態設為公開)有機會獲得碧麗妃新品─《溫℃高滲透修護水精華》50mL 乙瓶',
 		videolink: 'http://benefique-event.medialand.com.tw/share_video.html',
 		exchangeTitle:'已經將您的留言傳送給媽媽了！',
 		exchangeTxt:'送您一份禮物',
@@ -22,6 +22,9 @@
 	};
 	if(device.desktop()){
 		if(!o.wrp.hasClass('exchange')) window.location.href = window.location.href.replace('/m/','/');
+		else{
+			$('body').addClass('pc');
+		}
 	}
 
 	//Common
@@ -196,11 +199,12 @@
 				success: function(data) {
 					if(data.RS=="OK"){
 						o.exchangeData = data;
-						console.log(o.exchangeData);
+						// console.log(o.exchangeData);
 						afterGetdata();
 						o.loading.fadeOut();
 					}else{
 						o.loading.fadeOut();
+						$('.go_btn').addClass('on');
 						alert(data.RS);
 					}
 				},error: function(xhr, textStatus, errorThrown) {       
@@ -225,7 +229,7 @@
 					showConform_pop(false);
 				});
 			}
-			$('.store').html(o.exchangeData.STORE);
+			$('.store').html(o.exchangeData.STORE + '<br>' + o.exchangeData.CITY + o.exchangeData.ADDRESS);
 
 			if(o.exchangeData.TYPE !=0) mom = true;
 			else mom = false;

@@ -1592,3 +1592,516 @@ $vpw:0;
 	background-position: center top;
 	z-index: 0;
 }
+
+$vpw:1;
+body{
+	&.pc{
+		.loading{
+			@include flt;
+			z-index: 99;
+			background-image: url(../images/menubg.png);
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: center top;
+			span{
+				@include altvw(198,70,50,50,-99,-35);
+				left: 50%;
+				top: 50%;
+				text-indent: -9999px;
+				text-align: center;
+				background-image: url(../images/loading.png);
+				background-repeat: no-repeat;
+				background-size: contain;
+				background-position: center center;
+			}
+		}
+		.head_top{
+			@include fltvw(640,83);
+			left: 50%;
+			margin-left: -320px;
+			transition: 0.3s;
+			background-color: #fff2e7;
+			z-index: 9;
+			&.nobg{
+				background-color: initial;
+				&.on{
+					background-color: initial;
+				}
+			}
+			.logo{
+				@include altvw(152,83);
+				background-image: url(../images/logo.png);
+				background-size: contain;
+				background-repeat: no-repeat;
+				background-position: center center;
+			}
+			$color-main: #b5646f;
+			$color-active: #c19f75;
+			&.on{
+				background-color: #ffffff;
+				.menubtn{
+					.txt{
+						background-image: url(../images/menu_active.png);
+						background-size: contain;
+						background-repeat: no-repeat;
+						background-position: center center;
+					}	
+					
+					.top {
+						@include transform(translateY(getVW(15)) translateX(0) rotate(45deg));
+						background: $color-active;
+					}
+					.middle {
+						opacity: 0;
+						background: $color-active;
+					}    
+					.bottom {
+						@include transform(translateY(-13px) translateX(0) rotate(-45deg));
+						background: $color-active;
+					}
+				}
+			}
+			.menubtn{
+				@include artvw(173,83);
+				cursor: pointer;
+				.txt{
+					@include altvw(107,83);
+					background-image: url(../images/menu.png);
+					background-size: contain;
+					background-repeat: no-repeat;
+					background-position: center center;
+					transition: 0.3s;
+				}
+				span {
+					@include border-radius(0.39vw);
+					background: $color-main;
+					border: none;
+					height: getVW(5);
+					width: getVW(46);
+					position: absolute;
+					top: getVW(25);
+					left: getVW(107);
+					transition:  all .35s ease;
+					cursor: pointer;    
+					&:nth-of-type(2) {
+						top: getVW(39);
+					}    
+					&:nth-of-type(3) {
+						top: getVW(53);
+					}
+				}
+			}
+		}
+		.menu{
+			@include flt;
+			overflow-y: scroll;
+			-webkit-overflow-scrolling: touch;
+			z-index: 8;
+			height: 0;
+			&.on{
+				height: 100%;
+				.menua_box{
+					.menua{
+						opacity: 1;
+					}
+				}
+				.menu_social{
+					opacity: 1;
+				}
+				.footer{
+					opacity: 1;
+				}
+				.menu_bg{
+					@include transform(translateX(0));
+					opacity: 1;
+				}
+			}
+			&.off{
+				$delayTime:0s;
+				height: 100%;
+				.menua_box{
+					.menua{
+						@include rvw(640,110);
+						transition: 0.3s;
+						opacity: 0;
+						width: 100%;
+						text-indent: -9999px;
+						background-size: auto 100%;
+						background-repeat: no-repeat;
+						background-position: center center;
+						&.m1{
+							transition-delay: $delayTime;
+							background-image: url(../images/menu1.png);
+						}
+						&.m2{
+							transition-delay: $delayTime;
+							background-image: url(../images/menu2.png);
+						}
+						&.m3{
+							transition-delay: $delayTime;
+							background-image: url(../images/menu3.png);
+						}
+						&.m4{
+							transition-delay: $delayTime;
+							background-image: url(../images/menu4.png);
+						}
+						&.m5{
+							transition-delay: $delayTime;
+							background-image: url(../images/menu5.png);
+						}
+					}
+				}
+				.menu_social{
+					transition-delay: $delayTime;
+					opacity: 0;
+				}
+				.footer{
+					transition-delay: $delayTime;
+					opacity: 0;
+				}
+				.menu_bg{
+					transition-delay: 0.3s;
+					@include transform(translateX(100%));
+					opacity: 0;
+				}
+			}
+			$delayTime:0.8s;
+			.menua_box{
+				@include r;
+				margin-top: getVW(194);
+				z-index: 1;
+				.menua{
+					@include rvw(640,110);
+					transition: 0.3s;
+					opacity: 0;
+					width: 100%;
+					text-indent: -9999px;
+					background-size: auto 100%;
+					background-repeat: no-repeat;
+					background-position: center center;
+					&.m1{
+						transition-delay: $delayTime;
+						background-image: url(../images/menu1.png);
+					}
+					&.m2{
+						transition-delay: $delayTime;
+						background-image: url(../images/menu2.png);
+					}
+					&.m3{
+						transition-delay: $delayTime;
+						background-image: url(../images/menu3.png);
+					}
+					&.m4{
+						transition-delay: $delayTime;
+						background-image: url(../images/menu4.png);
+					}
+					&.m5{
+						transition-delay: $delayTime;
+						background-image: url(../images/menu5.png);
+					}
+				}
+			}
+			.menu_social{
+				@include r;
+				margin: getVW(38) 0 getVW(150) 0;
+				text-align: center;
+				padding-top: getVW(60);
+				transition: 0.3s;
+				transition-delay: $delayTime;
+				opacity: 0;
+				z-index: 1;
+				&:before{
+					content:"";
+					@include altvw(400,2,0,0,-200);
+					background-color: #e8dacf;
+					left: 50%;
+				}
+				.home_btn{
+					width: getVW(58);
+					height: getVW(57);
+					margin-right: getVW(48);
+					background-image: url(../images/menu_home.png);
+					background-size: contain;
+					background-repeat: no-repeat;
+					background-position: center center;
+					display: inline-block;
+					vertical-align: top;
+					text-indent: -9999px;
+				}
+				.fb_btn{
+					width: getVW(58);
+					height: getVW(57);
+					background-image: url(../images/menu_fb.png);
+					background-size: contain;
+					background-repeat: no-repeat;
+					background-position: center center;
+					display: inline-block;
+					vertical-align: top;
+					text-indent: -9999px;
+				}
+			}
+			.footer{
+				@include r;
+				@include fontvw(22,24,#b7a79a);
+				height: getVW(40);
+				margin-bottom: getVW(55);
+				text-align: center;
+				text-indent: -9999px;
+				background-image: url(../images/footer_txt.png);
+				background-size: auto 100%;
+				background-repeat: no-repeat;
+				background-position: center center;
+				transition: 0.3s;
+				transition-delay: $delayTime;
+				opacity: 0;
+				z-index: 1;
+			}
+			.menu_bg{
+				@include flt;
+				@include transform(translateX(100%));
+				background-image: url(../images/menubg.png);
+				background-size: cover;
+				background-repeat: no-repeat;
+				background-position: center top;
+				background-color: #fff0e6;
+				opacity: 0;
+				transition: 0.5s;
+				z-index: 0;
+			}
+		}
+		.wrapper{
+			padding-top: 83px;
+			.stage_exchange{
+				@include r;
+				float: none;
+				width: 640px;
+				margin: auto;
+				.title{
+					@include r;
+					height: getVW(81);
+					margin-top: getVW(65);
+					margin-bottom: getVW(42);
+					background-image: url(../images/exchange_title.png);
+					background-size: auto 100%;
+					background-repeat: no-repeat;
+					background-position: center center;
+				}
+				.frame{
+					@include r;
+					min-height: getVW(859);
+					.content{
+						@include r;
+						width: getVW(470);
+						margin-left: 85px;
+						margin-right: 85px;
+						padding-top: getVW(96);
+						margin-bottom: getVW(200);
+						z-index: 1;
+						.message{
+							@include r;
+							.t{
+								@include r;
+								@include fontvw(32,44,#b75b64);
+								text-align: center;
+								margin-bottom: getVW(36);
+								max-height: 99999px;
+							}
+							.w{
+								@include r;
+								@include fontvw(26,49,#8e796e);
+								letter-spacing: 1px;
+								background-image: url(../images/exchange_msg_bg.png);
+								background-repeat: repeat;
+								background-size: auto getVW(49);
+								background-position: left top;
+								margin-bottom: getVW(36);
+								max-height: 99999px;
+							}
+						}
+						.st{
+							@include r;
+							.type{
+								@include r;
+								@include fontvw(32,44,#8e796e);
+								text-align: center;
+								max-height: 99999px;
+							}
+							span{
+								@include r;
+								@include fontvw(32,44,#b78e58);
+								text-align: center;
+								max-height: 99999px;
+							}
+							.w{
+								@include r;
+								@include fontvw(32,44,#8e796e);
+								text-align: center;
+								max-height: 99999px;
+							}
+						}
+						.tester{
+							@include r;
+							height: getVW(222);
+							background-image: url(../images/exchange_pic.png);
+							background-repeat: no-repeat;
+							background-size: auto 100%;
+							background-position: center center;
+						}
+						.tester_des{
+							@include r;
+							@include fontvw(24,34,#b78e58);
+							text-align: center;
+							margin-bottom: getVW(20);
+							max-height: 99999px;
+						}
+						.word{
+							@include r;
+							@include fontvw(26,34,#8e796e);
+							@include border-radius(getVW(10));
+							box-sizing: border-box;
+							border: 2px solid #d7d0cb;
+							padding: getVW(20);
+							margin-bottom: getVW(30);
+							max-height: 99999px;
+							span{
+								@include fontvw(26,34,#b75b64);
+								display: inline-block;
+								max-height: 99999px;
+							}
+						}
+						.btn{
+							@include r;
+							height: getVW(84);
+							margin-bottom: getVW(30);
+							a{
+								@include altvw(466,84,50,0,-233);
+								left: 50%;
+								background-image: url(../images/exchange_btn1.png);
+								background-repeat: no-repeat;
+								background-size: contain;
+								background-position: center center;
+								&.on{
+									background-image: url(../images/exchange_btn2.png);
+								}
+							}
+						}
+						.des{
+							@include r;
+							ul{
+								@include r;
+								li{
+									@include r;
+									.lt{
+										@include altvw(45,34);
+										@include fontvw(24,34,#8e796e);
+										text-align: center;
+										z-index: 1;
+									}
+									.rt{
+										@include r;
+										@include fontvw(24,34,#8e796e);
+										max-height: 99999px;
+										box-sizing: border-box;
+										padding-left: getVW(34);
+										text-align: left;
+									}
+								}
+							}
+						}
+					}
+					.frame_bg{
+						@include alt;
+						z-index: 0;
+						.frame_bg_top{
+							@include alt;
+							height: getVW(206);
+							background-image: url(../images/input_frame_bg_top.png);
+							background-size: 100% auto;
+							background-repeat: no-repeat;
+							background-position: center bottom;
+						}
+						.frame_bg_middle{
+							@include alt;
+							height: calc(100% - 206px - 653px);
+							top: getVW(206);
+							background-image: url(../images/input_frame_bg_middle.png);
+							background-size: 100% auto;
+							background-repeat: repeat-y;
+							background-position: center top;
+						}
+						.frame_bg_bottom{
+							@include alb;
+							height: getVW(653);
+							background-image: url(../images/input_frame_bg_bottom.png);
+							background-size: 100% auto;
+							background-repeat: no-repeat;
+							background-position: center top;
+						}
+					}
+				}
+			}
+		}
+		.conform_pop{
+			@include flt;
+			z-index: 10;
+			background-color: #fec2ab;
+			overflow-y: scroll;
+			-webkit-overflow-scrolling: touch;
+			display: none;
+			.main{
+				@include altvw(629,845,50,65,-314);
+				left: 50%;
+				z-index: 1;
+				background-image: url(../images/pop_bg.png);
+				background-repeat: no-repeat;
+				background-size: contain;
+				background-position: center center;
+				.closebtn{
+					@include artvw(115,115,8);
+					background-image: url(../images/pop_closebtn.png);
+					background-repeat: no-repeat;
+					background-size: contain;
+					background-position: center center;
+					z-index: 2;
+					cursor: pointer;
+				}
+				.word{
+					@include r;
+					@include fontvw(32,46,#8e796e);
+					text-align: center;
+					box-sizing: border-box;
+					padding-left: getVW(30);
+					margin-top: getVW(280);
+					margin-bottom: getVW(60);
+					span{
+						color: #bd6972;
+					}
+				}
+				.btn{
+					@include r;
+					width: getVW(224);
+					margin-left: getVW(207);
+					a{
+						@include r;
+						@include fontvw(30,66,#fff0cf);
+						@include border-radius(getVW(34));
+						text-align: center;
+						height: getVW(68);
+						box-sizing: border-box;
+						border: 1px solid #f0ce9c;
+						background-color: #bd6972;
+						margin-bottom: getVW(24);
+					}
+				}
+			}
+		}
+		.bg{
+			@include flt(640px,100%,50%,0,-320px);
+			background-image: url(../images/bg.jpg);
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: center top;
+			z-index: 0;
+		}
+	}
+}
