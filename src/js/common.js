@@ -633,7 +633,7 @@
 			if(_this.hasClass('mom_data_box')) _mapDom = document.getElementById('mapCanvas2');
 
 			var _pp = new google.maps.LatLng(25.0857656,121.4729057);
-			var mapOptions = {zoom: 18,center: _pp};
+			var mapOptions = {zoom: 15,center: _pp};
 			var map = new google.maps.Map(_mapDom,mapOptions);	
 			var beachMarker = new google.maps.Marker({position: _pp,map: map});
 			map.setCenter(_pp);
