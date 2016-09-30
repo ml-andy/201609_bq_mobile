@@ -11,13 +11,14 @@
 <meta name="copyright" content="design : Medialand @ 2016"/>
 <meta property="og:title" content="碧麗妃│用溫度傳遞幸福"/>
 <meta property="og:type" content="website"/>    
-<meta property="og:image" content="images/fbsc.jpg"/>
+<meta property="og:image" content="images/fbsc2.jpg"/>
 <meta property="og:site_name" content="碧麗妃│用溫度傳遞幸福"/>
 <meta property="og:description" content="【免費體驗 x 影片分享抽】溫℃高滲透修護水精華，用溫度傳遞幸福。高滲透保濕、修護毛細血管、從深層溫熱肌膚。讓妳和媽媽一起變漂亮，暖活在觸手可及的幸福中！"/>
 <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
 <!---->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+<script src="https://www.youtube.com/iframe_api"></script>
 <!--css-->
 <link rel="stylesheet" href="css/common.css"/>
 <!--js-->
@@ -25,6 +26,21 @@
 <script src="js/device.min.js"></script>
 <script src="js/ga.js"></script>
 <script src="js/common.js"></script>
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+
+fbq('init', '1092747424085750');
+fbq('track', "PageView");</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1092747424085750&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Facebook Pixel Code -->
+
 </head>
 <body>
   <div class="turn_straight"></div>
@@ -66,7 +82,7 @@
            <!--<a href="javascript:;" class="award_btn">得獎名單</a>-->
        </div>
        <div class="video_box">
-           <iframe width="580" height="380" src="https://www.youtube.com/embed/8bko-b90m_M" frameborder="0" allowfullscreen></iframe>
+         <div id="mainVideo"></div>
        </div>
        <div class="sharebtn">
            <a href="javascript:;">分享</a>

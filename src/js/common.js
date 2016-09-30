@@ -12,6 +12,7 @@
 		messageTxt:'請輸入留言',
 		FBAppId: '176845812757265',
 		mainurl: 'http://benefique-event.medialand.com.tw/m/',
+		mainVideoID: '8bko-b90m_M',
 		videotitle:'碧麗妃│用溫度傳遞幸福',
 		videodes:'妳和媽媽之間，存在什麼溫暖小互動？即日起至2016/11/02，分享影片到Facebook(需將狀態設為公開)有機會獲得碧麗妃新品─《溫℃高滲透修護水精華》50mL 乙瓶',
 		videolink: 'http://benefique-event.medialand.com.tw/share_video.html',
@@ -26,59 +27,42 @@
 			$('body').addClass('pc');
 		}
 	}
+	FB.init({
+		appId      : o.FBAppId,
+		channelUrl : o.mainurl,
+		status     : true,
+		xfbml      : true,
+		cookie     : true
+	});
 
 	//Common
-	if(o.wrp.hasClass('exchange')){
-		$('.logo').on('click',function(){
-			tracker_btn('/m/index_btn.html');
-			window.location.href='m/index.html';
-		})
-		$('.menua_box .m1').on('click',function(){
-			tracker_btn('/m/trial_btn.html');
-			window.location.href="m/trial.html";
-		});
-		$('.menua_box .m2').on('click',function(){
-			tracker_btn('/m/video_btn.html');
-			window.location.href="m/video.html";
-		});
-		$('.menua_box .m3').on('click',function(){
-			tracker_btn('/m/product_btn.html');
-			window.location.href="m/product.html";
-		});
-		$('.menua_box .m4').on('click',function(){
-			tracker_btn('/m/blogger_btn.html');
-			window.location.href="m/blogger.html";
-		});
-		$('.menua_box .m5').on('click',function(){
-			tracker_btn('/m/tips_btn.html');
-			window.location.href="m/tips.html";
-		});
-	}else{
-		$('.logo').on('click',function(){
-			tracker_btn('/m/index_btn.html');
-			window.location.href='index.html';
-		})
-		$('.menua_box .m1').on('click',function(){
-			tracker_btn('/m/trial_btn.html');
-			window.location.href="trial.html";
-		});
-		$('.menua_box .m2').on('click',function(){
-			tracker_btn('/m/video_btn.html');
-			window.location.href="video.html";
-		});
-		$('.menua_box .m3').on('click',function(){
-			tracker_btn('/m/product_btn.html');
-			window.location.href="product.html";
-		});
-		$('.menua_box .m4').on('click',function(){
-			tracker_btn('/m/blogger_btn.html');
-			window.location.href="blogger.html";
-		});
-		$('.menua_box .m5').on('click',function(){
-			tracker_btn('/m/tips_btn.html');
-			window.location.href="tips.html";
-		});
-	}
+	var _m = '';
+	if(o.wrp.hasClass('exchange')) _m = 'm/';
+
+	$('.logo').on('click',function(){
+		tracker_btn('/m/index_btn.html');
+		window.location.href=_m + 'index.html';
+	})
+	$('.menua_box .m1').on('click',function(){
+		tracker_btn('/m/trial_btn.html');
+		window.location.href=_m + "trial.html";
+	});
+	$('.menua_box .m2').on('click',function(){
+		tracker_btn('/m/video_btn.html');
+		window.location.href=_m + "video.html";
+	});
+	$('.menua_box .m3').on('click',function(){
+		tracker_btn('/m/product_btn.html');
+		window.location.href=_m + "product.html";
+	});
+	$('.menua_box .m4').on('click',function(){
+		tracker_btn('/m/blogger_btn.html');
+		window.location.href=_m + "blogger.html";
+	});
+	$('.menua_box .m5').on('click',function(){
+		tracker_btn('/m/tips_btn.html');
+		window.location.href=_m + "tips.html";
+	});
 	
 	$('.menu_social .home_btn').on('click',function(){
 		tracker_btn('/m/official_btn.html');
@@ -292,13 +276,8 @@
 	//video
 	function initVideo(){
 		tracker_pg('/m/video.html');
-		FB.init({
-	        appId      : o.FBAppId,
-	        channelUrl : o.mainurl,
-	        status     : true,
-	        xfbml      : true,
-	        cookie     : true
-	    });
+		createMainVideo();
+		
 
 		$('.award_btn').on('click',function(){
 			tracker_btn('/m/video_winner_btn.html');
@@ -337,6 +316,32 @@
 			window.location.href="input.html";
 		});
 
+		function createMainVideo(){
+			o.mainVideo = new YT.Player('mainVideo', {
+				height: '100%',
+				width: '100%',
+				videoId: o.mainVideoID,
+				playerVars:{
+					'controls':1,
+					'autoplay':false,
+					'enablejsapi':'0',
+					'hd':'1',
+					'rel':'0',
+					'showinfo':'0',
+					'modestbranding':'1',
+					'cc_load_policy':'1',
+					'wmode':'transparent'      
+				},
+				events: {
+					'onStateChange': mainVideoStateChange
+				}
+			});
+		}
+		function mainVideoStateChange(event){
+			// console.log('event.data:' + event.data);
+			// console.log('YT.PlayerState.PLAYING:' + YT.PlayerState.PLAYING);
+			if(event.data == YT.PlayerState.PLAYING) tracker_btn('/m/video_play_btn.html');
+		}
 		function showAwardpop(_t){
 			if(_t){
 				tracker_pg('/m/videowinner.html');
