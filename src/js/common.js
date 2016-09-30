@@ -313,7 +313,7 @@
 		});
 		$('.video_success_pop .sendbtn a').on('click',function(){
 			tracker_btn('/m/videodone_trial_btn.html');
-			window.location.href="input.html";
+			window.location.href="trial.html";
 		});
 
 		function createMainVideo(){
