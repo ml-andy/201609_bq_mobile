@@ -499,13 +499,31 @@ $vpw:0;
 						@include fontvw(26,34,#8e796e);
 						margin-bottom: getVW(215);
 					}
-					.map{
+					.map_box{
 						@include albvw(344,190,50,0,-172);
 						@include border-radius(getVW(10));
 						left: 50%;
 						background-color: #e6e6e6;
 						box-sizing: border-box;
 						border: 1px solid #d5cbc3;
+						.icon{
+							@include artvw(67,67,5,5);
+							background-image: url(../images/map_icon.png);
+							background-size: contain;
+							background-repeat: no-repeat;
+							background-position: center center;
+							cursor: pointer;
+							z-index: 1;
+						}
+						.map{
+							@include albvw(344,190,50,0,-172);
+							@include border-radius(getVW(10));
+							left: 50%;
+							background-color: #e6e6e6;
+							box-sizing: border-box;
+							border: 1px solid #d5cbc3;
+							z-index: 0;
+						}
 					}
 				}
 				.code_box{

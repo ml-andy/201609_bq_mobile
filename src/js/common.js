@@ -12,7 +12,7 @@
 		messageTxt:'請輸入留言',
 		FBAppId: '176845812757265',
 		mainurl: 'http://benefique-event.medialand.com.tw/m/',
-		mainVideoID: '8bko-b90m_M',
+		mainVideoID: 'D7s0wudVjWs',
 		videotitle:'碧麗妃│用溫度傳遞幸福',
 		videodes:'妳和媽媽之間，存在什麼溫暖小互動？即日起至2016/11/02，分享影片到Facebook(需將狀態設為公開)有機會獲得碧麗妃新品─《溫℃高滲透修護水精華》50mL 乙瓶',
 		videolink: 'http://benefique-event.medialand.com.tw/share_video.html',
@@ -57,7 +57,7 @@
 	});
 	$('.menua_box .m4').on('click',function(){
 		tracker_btn('/m/blogger_btn.html');
-		window.location.href=_m + "blogger.html";
+		// window.location.href=_m + "blogger.html";
 	});
 	$('.menua_box .m5').on('click',function(){
 		tracker_btn('/m/tips_btn.html');
@@ -625,6 +625,7 @@
 				_store = _this.find('.store'),
 				_address = _this.find('.address'),
 				_mapDom = document.getElementById('mapCanvas'),
+				_icon = _this.find('.map_box .icon'),
 				nowCity = 0,
 				nowArea = 0,
 				nowStore = 0;
@@ -641,6 +642,11 @@
 			for(i in o.StoreData) _city.append('<option value="'+ o.StoreData[i].city +'">'+ o.StoreData[i].city +'</option>');
 			cityChange();
 
+			_icon.click(function(){
+				var _t = o.StoreData[nowCity].areas[nowArea].STORES[nowStore];
+				var _add = _t.CITY + _t.AREA + _t.ADDRESS;
+				window.open('https://www.google.com/maps/place/'+ _add +'/');
+			});
 			_city.change(function(){
 				nowCity = _city.find('option:selected').index();
 				cityChange();
