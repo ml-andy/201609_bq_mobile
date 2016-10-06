@@ -491,6 +491,9 @@ $vpw:0;
 									border: getVW(2) solid #cfc3ba;
 									background-color: #fff;
 									padding: 0 getVW(10);
+									&.gray{
+										color: #ccc;
+									}
 								}
 							}
 						}

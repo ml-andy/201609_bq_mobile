@@ -673,6 +673,8 @@
 			}
 			function storeChange(_n){
 				var _t = o.StoreData[nowCity].areas[nowArea].STORES[nowStore];
+				if(_t.STORE.match('已額滿')) _store.addClass('gray');
+				else _store.removeClass('gray');
 				_address.html(
 					_t.STORE +'<br>'+
 					_t.TEL +'<br>'+
