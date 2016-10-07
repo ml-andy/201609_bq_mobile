@@ -605,6 +605,9 @@ $vpw:0;
 						background-repeat: no-repeat;
 						background-position: center center;
 						text-indent: -9999px;
+						&.over{
+							background-image: url(../images/input_sendbtn_over.png);
+						}
 					}
 				}
 				.des{
@@ -1333,6 +1336,41 @@ $vpw:0;
 				background-size: contain;
 				background-position: center center;
 			}
+		}
+	}
+}
+.alert_pop{
+	@include flt;
+	z-index: 10;
+	background-color: #fec2ab;
+	overflow-y: scroll;
+	-webkit-overflow-scrolling: touch;
+	display: none;
+	.main{
+		@include altvw(629,845,50,65,-314);
+		left: 50%;
+		z-index: 1;
+		background-image: url(../images/pop_bg.png);
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-position: center center;
+		.closebtn{
+			@include artvw(115,115,8);
+			background-image: url(../images/pop_closebtn.png);
+			background-repeat: no-repeat;
+			background-size: contain;
+			background-position: center center;
+			z-index: 2;
+			cursor: pointer;
+		}
+		.title{
+			@include r;
+			height: getVW(137);
+			margin-top: getVW(348);
+			background-image: url(../images/alert_pop_title.png);
+			background-repeat: no-repeat;
+			background-size: auto 100%;
+			background-position: center center;
 		}
 	}
 }

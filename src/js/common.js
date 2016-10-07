@@ -472,6 +472,9 @@
 		$('.success_pop .closebtn').click(function(){
 			showSuccesspop(false);
 		});
+		$('.alert_pop .closebtn').click(function(){
+			showAlertpop(false);
+		});
 		$('.checkbox').click(function(){
 			if($(this).hasClass('on')) $(this).removeClass('on');
 			else $(this).addClass('on');
@@ -482,7 +485,14 @@
 			else $(this).removeClass('on');
 		});
 
-
+		function showAlertpop(_t){
+			if(_t){
+				$('.stage_input .sendbtn a').addClass('on').addClass('over');
+				$('.alert_pop').fadeIn();
+			}else{
+				$('.alert_pop').fadeOut();
+			}
+		}
 		function clearResendpop(){
 			var _resend_data_box = $('.resend_data_box');
 			_resend_data_box.find('.phone').val('');
@@ -555,13 +565,26 @@
 				success: function(data) {
 					if(data.RS=="OK"){
 						o.StoreData = data.DATA;
-						console.log(data);
-						$('.data_box').each(data_boxFC);
+						// console.log(data);
+						checkStoredata();
 					}else alert(data.RS);
 				},error: function(xhr, textStatus, errorThrown) {             
 					console.log("error:", xhr, textStatus, errorThrown);
 				}
 			}); 
+		}
+		function checkStoredata(){
+			var over = true;
+			for(a in o.StoreData){
+				for(b in o.StoreData[a].areas){
+					for(c in o.StoreData[a].areas[b].STORES){
+						// console.log(o.StoreData[a].areas[b].STORES[c].QTY*1);
+						if(o.StoreData[a].areas[b].STORES[c].QTY * 1 > 0) over = false;
+					}
+				}
+			}
+			if(over) showAlertpop(true);
+			else $('.data_box').each(data_boxFC);
 		}
 		function clearSavedata(){
 			var _data_box = $('.your_data_box');
