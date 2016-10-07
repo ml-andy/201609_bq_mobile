@@ -57,7 +57,7 @@
 	});
 	$('.menua_box .m4').on('click',function(){
 		tracker_btn('/m/blogger_btn.html');
-		// window.location.href=_m + "blogger.html";
+		window.location.href=_m + "blogger.html";
 	});
 	$('.menua_box .m5').on('click',function(){
 		tracker_btn('/m/tips_btn.html');
@@ -555,7 +555,7 @@
 				success: function(data) {
 					if(data.RS=="OK"){
 						o.StoreData = data.DATA;
-						// console.log(o.StoreData);
+						console.log(data);
 						$('.data_box').each(data_boxFC);
 					}else alert(data.RS);
 				},error: function(xhr, textStatus, errorThrown) {             
