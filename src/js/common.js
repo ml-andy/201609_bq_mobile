@@ -13,6 +13,8 @@
 		FBAppId: '176845812757265',
 		mainurl: 'http://benefique-event.shiseido.com.tw/m/',
 		mainVideoID: 'D7s0wudVjWs',
+		tvcVideo1: '1SQ_-LIqDdg',
+		tvcVideo2: 'F728BXOTCNQ',
 		videotitle:'碧麗妃│用溫度傳遞幸福',
 		videodes:'妳和媽媽之間，存在什麼溫暖小互動？即日起至2016/11/02，分享影片到Facebook(需將狀態設為公開)有機會獲得碧麗妃新品─《溫℃高滲透修護水精華》50mL 乙瓶',
 		videolink: 'http://benefique-event.shiseido.com.tw/share_video.html',
@@ -270,6 +272,52 @@
 			tracker_btn('/m/product_more_btn.html');
 			window.open('http://www.shiseido.com.tw/brand.aspx?b=1#/new');
 		});
+
+		o.tvcVideo1 = new YT.Player('tvcVideo1', {
+			height: '100%',
+			width: '100%',
+			videoId: o.tvcVideo1,
+			playerVars:{
+				'controls':1,
+				'autoplay':false,
+				'enablejsapi':'0',
+				'hd':'1',
+				'rel':'0',
+				'showinfo':'0',
+				'modestbranding':'1',
+				'cc_load_policy':'1',
+				'wmode':'transparent'      
+			},
+			events: {
+				'onStateChange': tvcVideo1StateChange
+			}
+		});
+		function tvcVideo1StateChange(event){
+			if(event.data == YT.PlayerState.PLAYING) tracker_btn('/m/product_TVC1_btn.html');
+		}
+		
+		o.tvcVideo2 = new YT.Player('tvcVideo2', {
+			height: '100%',
+			width: '100%',
+			videoId: o.tvcVideo2,
+			playerVars:{
+				'controls':1,
+				'autoplay':false,
+				'enablejsapi':'0',
+				'hd':'1',
+				'rel':'0',
+				'showinfo':'0',
+				'modestbranding':'1',
+				'cc_load_policy':'1',
+				'wmode':'transparent'      
+			},
+			events: {
+				'onStateChange': tvcVideo2StateChange
+			}
+		});
+		function tvcVideo2StateChange(event){
+			if(event.data == YT.PlayerState.PLAYING) tracker_btn('/m/product_TVC2_btn.html');
+		}
 		
 	}
 
