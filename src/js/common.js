@@ -157,6 +157,9 @@
 
 	//exchange
 	function initExchange(){
+		var frame_bg_middleH = $('.frame_bg').height() - $('.frame_bg_top').height() - $('.frame_bg_bottom').height();
+		$('.frame_bg_middle').css('height',frame_bg_middleH);
+		
 		getExchange();
 		var mom = false;
 
@@ -259,6 +262,9 @@
 				$('.message .w').html(o.exchangeData.MESSAGE);
 				$('.type').html(o.exchangeTxt);
 			}
+
+			var frame_bg_middleH = $('.frame_bg').height() - $('.frame_bg_top').height() - $('.frame_bg_bottom').height();
+			$('.frame_bg_middle').css('height',frame_bg_middleH);
 
 		}
 	}
