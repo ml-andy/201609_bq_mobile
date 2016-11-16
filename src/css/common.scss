@@ -1590,6 +1590,41 @@ $vpw:0;
 		}
 	}
 }
+.award_pop{
+	@include flt;
+	z-index: 10;
+	background-color: #fec2ab;
+	overflow-y: scroll;
+	-webkit-overflow-scrolling: touch;
+	// display: none;
+	.main{
+		@include altvw(629,845,50,65,-314);
+		left: 50%;
+		z-index: 1;
+		background-image: url(../images/pop_bg.png);
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-position: center center;
+		.closebtn{
+			@include artvw(115,115,8);
+			background-image: url(../images/pop_closebtn.png);
+			background-repeat: no-repeat;
+			background-size: contain;
+			background-position: center center;
+			z-index: 2;
+			cursor: pointer;
+		}
+		.content{
+			@include r;
+			height: getVW(594);
+			margin-top: getVW(130);
+			background-image: url(../images/video_award_list_pop.png);
+			background-repeat: no-repeat;
+			background-size: auto 100%;
+			background-position: center top;
+		}
+	}
+}
 .conform_pop{
 	@include flt;
 	z-index: 10;

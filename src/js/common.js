@@ -341,6 +341,9 @@
 			tracker_btn('/m/video_rule_btn.html');
 			showAboutpop(true);
 		});
+		$('.award_pop .closebtn').on('click',function(){
+			showAwardpop(false);
+		});
 		$('.about_pop .closebtn').on('click',function(){
 			showAboutpop(false);
 		});
@@ -363,7 +366,7 @@
 		$('.sharebtn a').on('click',function(){
 			tracker_btn('/m/video_fbshare_btn.html');
 			shareVideo();
-			showVideoPop(true);
+			// showVideoPop(true);
 		});
 		$('.video_success_pop .sendbtn a').on('click',function(){
 			tracker_btn('/m/videodone_trial_btn.html');
